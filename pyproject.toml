@@ -1,0 +1,33 @@
+[project]
+name = "t-display-s3"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [{ name = "Julio Formiga", email = "julio.formiga@gmail.com" }]
+dependencies = [
+  "micropython-esp32-stubs>=1.23.0.post1",
+  "mpremote>=1.23.0",
+  "esptool>=4.7.0",
+]
+requires-python = ">=3.12"
+license = { text = "MIT" }
+readme = "README.md"
+
+[tool.pyright]
+extraPaths = [".venv/lib/python3.12/site-packages/"]
+reportMissingImports = true
+reportMissingModuleSource = false
+reportMissingTypeStubs = true
+
+[tool.ruff]
+select = ["B", "E", "F", "I", "N", "D"]
+ignore = ["D1", "E402"]
+src = ["src"]
+
+[tool.ruff.pycodestyle]
+max-doc-length = 100
+
+[tool.ruff.pydocstyle]
+convention = "pep257" # Accepts: "google", "numpy", or "pep257".
+
+[tool.pdm]
+distribution = false
